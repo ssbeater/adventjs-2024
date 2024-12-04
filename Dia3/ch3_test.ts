@@ -1,5 +1,5 @@
 import { assertEquals } from "@std/assert";
-import { organizeInventory } from "../ch3.ts";
+import { organizeInventory } from "./ch3.ts";
 
 Deno.test(function addTest() {
     const inventary = [

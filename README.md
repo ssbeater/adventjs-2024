@@ -23,7 +23,14 @@ El repositorio está organizado en carpetas según los días del reto:
 Cada carpeta contiene:
 - README.md con la descripción del desafío.
 - chX_solution.ts con mi implementación.
-- chX_tests.ts con pruebas automatizadas para validar la solución.
+- chX_test.ts con pruebas automatizadas para validar la solución.
+
+## Como ejecutar las pruebas?
+Este repositorio utiliza **Deno 2.1** para la ejecucion de los archivos ".ts", se requiere tener instalado [Deno](https://deno.com/), y las pruebas se pueden ejecutar desde la raiz del repositorio utilizando el comando:
+
+```bash
+deno test
+```
 
 ## ¿Por qué participo? 🤔
 - Practicar y mejorar habilidades de desarrollo.

@@ -1,5 +1,5 @@
 import { assertEquals } from "@std/assert";
-import { createXmasTree } from "../ch4.ts";
+import { createXmasTree } from "./ch4.ts";
 
 Deno.test(function addTest() {
     const result = createXmasTree(5, '*')

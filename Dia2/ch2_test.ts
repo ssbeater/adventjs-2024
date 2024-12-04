@@ -1,5 +1,5 @@
 import { assertEquals } from "@std/assert";
-import { createFrame } from "../ch2.ts";
+import { createFrame } from "./ch2.ts";
 
 Deno.test(function addTest() {
     const result = createFrame(['midu', 'madeval', 'educalvolpz'])

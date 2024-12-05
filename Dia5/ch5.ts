@@ -4,20 +4,30 @@ export type Shoe = {
 };
 
 export function organizeShoes(shoes: Shoe[]): number[] {
-    const sizes = Array.from(new Set(shoes.map((i) => i.size)));
+    const sizeMap: Record<number, { left: number; right: number }> = {};
+    const available: number[] = [];
 
-    const availableSizes = sizes.reduce<number[]>((available, size) => {
-        const right = shoes.filter((i) => i.size === size && i.type === "R");
-        const left = shoes.filter((i) => i.size === size && i.type === "I");
+    shoes.forEach((shoe) => {
+        const { size, type } = shoe;
 
-        const availableTimes = Math.min(right.length, left.length);
-
-        for (let index = 0; index < availableTimes; index++) {
-            available.push(size);
+        if (!sizeMap[size]) {
+            sizeMap[size] = { left: 0, right: 0 };
         }
 
-        return available;
-    }, []);
+        if (type === "I") {
+            sizeMap[size].left++;
+        } else {
+            sizeMap[size].right++;
+        }
+    });
 
-    return availableSizes;
+    for (const size in sizeMap) {
+        const { left, right } = sizeMap[size];
+        const pairs = Math.min(left, right);
+        for (let i = 0; i < pairs; i++) {
+            available.push(Number(size));
+        }
+    }
+
+    return available;
 }

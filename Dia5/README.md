@@ -1,4 +1,4 @@
-# Dia 5
+# Day 5
 
 Santa Claus's elves 🧝🧝‍♂️ have found a bunch of mismatched magic boots in the workshop. Each boot is described by two values:
 
